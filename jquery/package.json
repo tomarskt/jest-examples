@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "jest": "*"
+  },
+  "dependencies": {
+    "jquery": "*"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}

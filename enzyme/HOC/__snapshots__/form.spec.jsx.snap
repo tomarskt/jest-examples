@@ -1,0 +1,10 @@
+exports[`Form should render correctly 1`] = `
+<form>
+  <Field
+    component="input"
+    name="title" />
+  <Field
+    component="textarea"
+    name="description" />
+</form>
+`;

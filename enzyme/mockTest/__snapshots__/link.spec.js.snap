@@ -1,0 +1,7 @@
+exports[`Link should render correctly 1`] = `
+<a>
+  <Icon
+    type="facebook" />
+  Facebook
+</a>
+`;
