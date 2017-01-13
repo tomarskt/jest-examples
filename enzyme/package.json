@@ -15,10 +15,13 @@
     "redux-form": "^6.4.3"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test-one":"jest form.spec.jsx --debug"
   },
   "jest": {
     "verbose": false,
-    "testEnvironment": "jsdom"
+    "bail":true,
+    "testEnvironment": "jsdom",
+    "setupTestFrameworkScriptFile":"./__setup.js"
   }
 }
