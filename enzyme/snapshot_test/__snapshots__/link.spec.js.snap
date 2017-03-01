@@ -1,9 +1,0 @@
-exports[`Link should render correctly 1`] = `
-<a>
-  <div>
-    <img
-      src="../img.png" />
-  </div>
-  Facebook
-</a>
-`;

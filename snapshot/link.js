@@ -1,10 +1,10 @@
 import React from 'react'
-import Icon from './Icon'
+import Icon from 'frankel-uk/Icon'
 
 const Link = ({children, href, icon}) =>
- (<a  >
+ (<div>
     <Icon type={icon} />
     {children}
- </a>)
+ </div>)
 
 export default Link
