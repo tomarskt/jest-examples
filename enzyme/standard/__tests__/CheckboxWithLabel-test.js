@@ -7,7 +7,7 @@ describe('shallow', () => {
 
   it('ToggleCheckbox changes the text after click child component button', () => {
     const wrapper = shallow(
-      <ToggleCheckbox/>
+      <ToggleCheckbox />
     )
     //default to off
     let checkbox = wrapper.find('label')
@@ -18,10 +18,10 @@ describe('shallow', () => {
     const myBtn = wrapper.find('MyButton') //we only render the fist level components
     expect(myBtn.node).toBeTruthy() //this is react component defined by `import MyButton from './mybutton'`
     myBtn.simulate('click'); // MyButton.onClick won't invoked; it's generally a bad idea to fire up events in shallow rendering case
-                             // AND **  my_callback in <MyButton onClick={ my_callback } /> is blindly called  **
-                             // I have a code inside MyButton which comment out the line of `this.props.onClick()` and that will only impact `mount`
-                             // becuase in `shallow` case, callbacks are just **blindly** called
-                             // the other difference between `shallow` and `mount` is that React lifecycle events like DidMount won't fired for `shallow` (just like server side rendering)
+    // AND **  my_callback in <MyButton onClick={ my_callback } /> is blindly called  **
+    // I have a code inside MyButton which comment out the line of `this.props.onClick()` and that will only impact `mount`
+    // becuase in `shallow` case, callbacks are just **blindly** called
+    // the other difference between `shallow` and `mount` is that React lifecycle events like DidMount won't fired for `shallow` (just like server side rendering)
 
     //check it again
     checkbox = wrapper.find('label')
@@ -31,9 +31,32 @@ describe('shallow', () => {
 
 });
 
+
+it('spy on prototype methods', () => {
+//arrange 
+  const onChangeSpy = jest.fn();
+  ToggleCheckbox.prototype.onChange = onChangeSpy;  //must before shallow!!!
+
+  const wrapper = shallow(
+    <ToggleCheckbox />
+  )
+  
+
+//act
+  const myBtn = wrapper.find('MyButton') //we only render the fist level components
+  expect(myBtn.node).toBeTruthy() //this is react component defined by `import MyButton from './mybutton'`
+  myBtn.simulate('click');
+
+//assert
+  expect(onChangeSpy.mock.calls.length).toBe(1)
+  expect(onChangeSpy).toBeCalled()
+
+});
+
+
 describe('mount', () => {
   it(' button click', () => {
-    const wrapper = mount(<ToggleCheckbox/>)
+    const wrapper = mount(<ToggleCheckbox />)
     console.log(wrapper.html())
     //default to off
     let checkbox = wrapper.find('label')
