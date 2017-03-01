@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "test": "jest",
+    "test-one": "jest form.spec.jsx --debug"
+  },
   "dependencies": {
     "react": "~15.3.1",
     "react-dom": "~15.3.1"
@@ -14,14 +18,10 @@
     "react-test-renderer": "^15.4.2",
     "redux-form": "^6.4.3"
   },
-  "scripts": {
-    "test": "jest",
-    "test-one":"jest form.spec.jsx --debug"
-  },
   "jest": {
     "verbose": false,
-    "bail":true,
+    "bail": true,
     "testEnvironment": "jsdom",
-    "setupTestFrameworkScriptFile":"./__setup.js"
+    "setupTestFrameworkScriptFile": "./__setup.js"
   }
 }

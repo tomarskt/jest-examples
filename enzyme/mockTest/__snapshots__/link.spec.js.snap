@@ -1,7 +1,9 @@
 exports[`Link should render correctly 1`] = `
 <a>
-  <Icon
-    type="facebook" />
+  <div>
+    <img
+      src="../img.png" />
+  </div>
   Facebook
 </a>
 `;
