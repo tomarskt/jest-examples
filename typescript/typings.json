@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "react": "registry:dt/react#15.0.0+20170225072957"
+  },
+  "globalDependencies": {
+    "jest": "registry:dt/jest#18.1.0+20170131225342"
+  }
+}
