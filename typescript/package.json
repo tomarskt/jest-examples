@@ -6,6 +6,7 @@
   "devDependencies": {
     "jest": "*",
     "react-addons-test-utils": "*",
+    "react-test-renderer": "^15.4.2",
     "typescript": ">=1.6.2"
   },
   "scripts": {
@@ -16,6 +17,6 @@
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
     },
-    "testRegex": "/__tests__/.*\\.(ts|tsx|js)$"
+    "testRegex": "/__tests__/.*\\.(ts|tsx|js)|\\.(test|spec)\\.(js|jsx|ts|tsx)$"
   }
 }
