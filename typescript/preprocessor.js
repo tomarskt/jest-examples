@@ -6,13 +6,16 @@ const tsConfig = require('./tsconfig.json');
 module.exports = {
   process(src, path) {
     if (path.endsWith('.ts') || path.endsWith('.tsx')) {
-      return tsc.transpile(
+      const compile_result = tsc.transpile(
         src,
         tsConfig.compilerOptions,
         path,
         []
       );
+      //console.log(`-------------------------  \n ${compile_result} \n-------------------------`)
+      return compile_result;
     }
+
     return src;
   },
 };
