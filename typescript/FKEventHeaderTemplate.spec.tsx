@@ -3,7 +3,7 @@ import * as renderer from 'react-test-renderer';
 
 
 jest.mock('Frankel/components/RaceTimeStatus',
-    () => ({ default: 'RaceTimeStatus' })
+    () => ({ default: 'RaceTimeStatus' })  // 12 hours to get this line figured out
     , { virtual: true });
 import { FKEventHeaderTemplate } from './FKEventHeaderTemplate'
 
