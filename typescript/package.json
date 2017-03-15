@@ -18,6 +18,9 @@
       "tsx",
       "js"
     ],
+    "modulePaths": [
+      "<rootDir>/config"
+    ],
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
     },
