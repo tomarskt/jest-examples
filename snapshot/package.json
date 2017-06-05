@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "jest", 
-    "debug": "node --debug-brk node_modules/jest/bin/jest --no-cache --runInBand link"
+    "test": "jest",
+    "debug": "node --debug-brk node_modules/jest/bin/jest --runInBand --no-cache link"
   },
   "dependencies": {
     "react": "^15.3.1",
