@@ -27,6 +27,24 @@ ul,ol {
             flex-direction: row !important;
             background-color: #f6f8fa;
             justify-content: space-between;
+            .filter-by{
+                span{
+                    color:#586069;
+                    margin-right: 8px;
+                    &.active{
+                        color:@blue;
+                    }
+                    &:hover{
+                        color:@blue;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .sort-by{
+                *:not(:last-child){
+                    margin-right:4px;
+                }
+            }
         }
         .link {
             text-decoration: none !important;
