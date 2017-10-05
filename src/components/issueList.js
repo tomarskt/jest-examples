@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import fetch from '../common/fetch';
 
 class IssueList extends Component {
@@ -32,7 +32,7 @@ class IssueList extends Component {
             })
     }
     render() {
-        return <div>content</div>
+        return <div className="test">content</div>
     }
 }
 

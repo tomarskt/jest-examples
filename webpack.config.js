@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
-
+const autoprefixer = require('autoprefixer')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var config = {
   devtool: 'source-map',
@@ -15,16 +16,35 @@ var config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('style.css')
   ],
   module: {
-    loaders: [
+    rules: [ // "style-loader!css-loader!less-loader" can only be used with module.loaders;
       {
         test: /\.jsx?/,
-        loaders: ['babel-loader'],
+        use: ['babel-loader'],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.less$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: ["css-loader",
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins:[
+                  autoprefixer({
+                    browsers: ['last 2 versions']
+                  })
+                ]
+              }
+            },
+            "less-loader"]
+        })
       }
     ]
-  }
+  },
 };
 
 
