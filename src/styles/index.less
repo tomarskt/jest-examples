@@ -1,19 +1,47 @@
 @color-secondary: #627b8b;
 @color-secondary-hover: #394f63;
-@color-gray: #b0b8bc;
-@color-background: #e1e4e7;
+@gray-dark: #24292e;
+@blue: #0366d6;
 * {
     box-sizing: border-box;
 }
 
+.link {
+    text-decoration: none !important;
+    color: @gray-dark;
+    &:hover {
+        color: @blue;
+    }
+}
 .issues-wrapper {
     display: flex;
-    
-    .issue-item:not(:last-child) {
-        margin-bottom: 10px;
-        .title{
+    flex-direction: column;
+    .issue-item {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        padding:5px;
+        border-bottom: 1px solid #e1e4e8;
+        .title {
             font-size: 20px;
             font-weight: bold;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            .avatar {
+                height: 30px;
+                width: 30px;
+                border-radius: 50px;
+            }
+            div,img,label,span,a {
+                margin-right: 6px;
+            }
+            .user-name{
+                color:@blue;
+            }
         }
     }
 }

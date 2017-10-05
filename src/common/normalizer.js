@@ -3,6 +3,7 @@ import moment from 'moment';
 export default function (issusPayload) {
     return issusPayload.map(p => ({
         id: p.id,
+        number: p.number,
         state: p.state,
         title: p.title,
         user: {
@@ -10,7 +11,8 @@ export default function (issusPayload) {
             avatarUrl: p.user.avatar_url,
             name: p.user.login,
         },
-        createdDateTime: moment(p.created_at).format('YYYY-MM-DD HH:mm'),
+        dateCreated_raw:p.created_at,
+        dateCraetedStr: moment(p.created_at).fromNow(),
         tags: p.labels.map(l => l.name)
     }));
 }
