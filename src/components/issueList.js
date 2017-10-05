@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 import fetch from '../common/fetch';
+import normalize from '../common/normalizer';
+import IssueItem from './issueItem';
 
 class IssueList extends Component {
     constructor() {
         super();
         this.state = {
             issues: [],
-            loading: true,
+            loading: false,
         }
     }
     componentDidMount() {
+        this.setState({
+            loading: true,
+        });
         fetch()
             .then(res => {
-                const issues = res.map(r => ({
-                    id: r.id,
-                    state: r.state,
-                    title: r.title,
-                    user: {
-                        avatar: r.user.avatar_url,
-                        id: r.user.id,
-                        login: r.user.login,
-                    }
-                }));
+                const issues = normalize(res);
                 this.setState({
                     loading: false,
                     issues,
@@ -32,7 +28,14 @@ class IssueList extends Component {
             })
     }
     render() {
-        return <div className="test">content</div>
+        const { issues, loading } = this.state;
+        return <div className="issues-wrapper">
+            {loading ? <h2>loading...</h2> :
+                <div>
+                    {issues.map( i=> <IssueItem key={`issue-${i.id}}`} issue={i}/> )}
+                </div>
+            }
+            </div>
     }
 }
 
