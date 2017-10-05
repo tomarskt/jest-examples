@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import ReactDom from 'react-dom';
 import './styles/index.less'
 
-import IssueList from './components/issueList';
+import IssueManager from './components/issueManager';
 class App extends Component {
     render() {
-        return <IssueList />
+        return <IssueManager />
     }
 }
 

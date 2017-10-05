@@ -1,7 +1,6 @@
 import 'whatwg-fetch';
-const API_HOST = 'https://api.github.com/repos/facebook/react/issues';
 
-export default function callApi(endpoint = API_HOST, options) {
+export default function callApi(endpoint, options) {
     const defaultOptions = {
         method: 'get',
         headers: {
