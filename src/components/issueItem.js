@@ -1,10 +1,13 @@
 import React from 'react';
 
 const issueItem = ({ issue }) => {
-    const { user } = issue;
+    const { user, tags } = issue;
     return <div className="issue-item">
-        <div className="title">
-            <a href={`#/issues/${issue.id}`} className="link">{issue.title}</a>
+        <div className="header">
+            <a href={`#/issues/${issue.id}`} className="link title">{issue.title}</a>
+            {
+                tags.map( (t, index)=><span key={index} className={`tag-${index % 3}`}>{t}</span> )
+            }
         </div>
         <div className="content">
             <div>#{issue.number}</div>

@@ -6,41 +6,78 @@
     box-sizing: border-box;
 }
 
-.link {
-    text-decoration: none !important;
-    color: @gray-dark;
-    &:hover {
-        color: @blue;
-    }
-}
 .issues-wrapper {
     display: flex;
     flex-direction: column;
     .issue-item {
         &:not(:last-child) {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
-        padding:5px;
+        padding:10px 4px;
+        border-top: 1px solid #e1e4e8;
         border-bottom: 1px solid #e1e4e8;
-        .title {
-            font-size: 20px;
-            font-weight: bold;
+        .link {
+            text-decoration: none !important;
+            color: @gray-dark;
+            &:hover {
+                color: @blue;
+            }
         }
-        .content {
+        .flex-row-container(){
             display: flex;
             align-items: center;
             justify-content: flex-start;
             flex-direction: row;
+        }
+        .header {
+            .flex-row-container();
+            a,span{
+                &:first-child{
+                    margin-right: 6px !important;
+                }
+                margin-right:2px;
+            }
+            .title {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .tag {
+                padding: 3px 4px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            .tag-0 {
+                .tag();
+                background-color: #fbca04;
+                color: #332900;
+            }
+            .tag-1 {
+                .tag();
+                background-color: #cc317c;
+                color: #fff;
+            }
+            .tag-2 {
+                .tag();
+                background-color: #006b75;
+                color: #fff;
+            }
+        }
+        .content {
+            .flex-row-container();
             .avatar {
                 height: 30px;
                 width: 30px;
                 border-radius: 50px;
             }
-            div,img,label,span,a {
+            div,
+            img,
+            label,
+            span,
+            a {
                 margin-right: 6px;
             }
-            .user-name{
-                color:@blue;
+            .user-name {
+                color: @blue;
             }
         }
     }
