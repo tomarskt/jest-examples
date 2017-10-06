@@ -1,10 +1,9 @@
-// place me inside a __mocks__/ **subdirectory immediately adjacent** to the module
+// place me inside a __mocks__/ **subdirectory immediately adjacent** to the REAL module
 
 
 // genMockFromModule: Given the name of a module, use the automatic mocking system to generate a mocked version of the module for you.
- const fetch = jest.genMockFromModule('../fetch'); // imagine your '../fetch' modlue has 1000 exports, this will mock all of them automatically;
-fetch.default  = mock_fetch;
-function mock_fetch(endpoint, options) {
+const fetchModule = jest.genMockFromModule('../fetch'); // imagine your '../fetch' modlue has 1000 exports, this will mock all of them automatically;
+function callApi(endpoint, options) {
     return Promise.resolve([
         {
             "id": 1111,
@@ -69,9 +68,13 @@ function mock_fetch(endpoint, options) {
     ])
 }
 
+// mimicking real module (like React/lib/React.js)
+fetchModule.default = callApi; // standard babel@6 transpiled result
 
+
+// mimicking wrapper module (like React/index.js)
 // babel es6 consumers are fine with both ways, but perfer the 1st approach as it's the babel@6 transpile behavior; 2nd is babel@5 and is deprecated now
-module.exports.default=fetch; // targeting typescript consumers; (can do import Fetch from './fetch';)
-module.exports = fetch;  // targeting es5 consumers; same as `babel-plugin-add-module-exports` ployfill; (can do var fetch = require('./fetch'); )
-                         
+module.exports.default = fetchModule; // targeting typescript consumers; (can do import Fetch from './fetch';)
+module.exports = fetchModule;  // targeting es5 consumers; same as `babel-plugin-add-module-exports` ployfill; (can do var fetch = require('./fetch'); )
+
 // if the module being mocked is small, you can also do module.exports = mock_fetch;
