@@ -1,6 +1,10 @@
 ## how to run the project
 `npm install` then `npm start`. open http://localhost:3000 
 
+## pass params to jest
+1. no need for `--` for `yarn run jest -u` 
+2. still need `--` for `yarn test -- -u`
+
 ## use jest to test async code (like fetch)
 greatest take-away being using snapshot with componentDidMount.
 1. you need to mock `fetch` module

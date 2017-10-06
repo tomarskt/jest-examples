@@ -70,5 +70,8 @@ function mock_fetch(endpoint, options) {
 }
 
 
-module.exports = fetch; 
+// babel es6 consumers are fine with both ways, but perfer the 1st approach as it's the babel@6 transpile behavior; 2nd is babel@5 and is deprecated now
+module.exports.default=fetch; // targeting typescript consumers; (can do import Fetch from './fetch';)
+module.exports = fetch;  // targeting es5 consumers; same as `babel-plugin-add-module-exports` ployfill; (can do var fetch = require('./fetch'); )
+                         
 // if the module being mocked is small, you can also do module.exports = mock_fetch;
