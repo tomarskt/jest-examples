@@ -30,9 +30,211 @@ exports[`Issue Manager renders correctly 1`] = `
   <div
     id="issue-container"
   >
-    <h2>
-      loading issue list...
-    </h2>
+    <div
+      className="issues-wrapper"
+    >
+      <div
+        className="issue-item issue-item-filter"
+      >
+        <div
+          className="filter-by"
+        >
+          <span
+            className="active"
+            onClick={[Function]}
+          >
+            3
+             All
+          </span>
+          <span
+            className=""
+            onClick={[Function]}
+          >
+            2
+             Open
+          </span>
+          <span
+            className=""
+            onClick={[Function]}
+          >
+            1
+             Closed
+          </span>
+        </div>
+        <div
+          className="sort-by"
+        >
+          <label
+            htmlFor="sel_sort_order"
+          >
+            Sort By
+          </label>
+          <select
+            disabled={true}
+          >
+            <option>
+              created date
+            </option>
+          </select>
+          <select
+            name="sel_sort_order"
+            onChange={[Function]}
+            value="descending"
+          >
+            <option
+              value="descending"
+            >
+              latest first
+            </option>
+            <option
+              value="ascending"
+            >
+              oldest first
+            </option>
+          </select>
+        </div>
+      </div>
+      <ul>
+        <li
+          className="issue-item"
+        >
+          <div
+            className="header"
+          >
+            <a
+              className="link title"
+              href="#/issues/1111"
+            >
+              How to wrap events in React 16
+            </a>
+            <span
+              className="tag-0"
+            >
+              Component: Core
+            </span>
+            <span
+              className="tag-1"
+            >
+              Type: Discussion
+            </span>
+          </div>
+          <div
+            className="content"
+          >
+            <div>
+              #
+              1111
+            </div>
+            <img
+              className="avatar"
+              src="https://avatars2.githubusercontent.com/u/23753?v=4"
+            />
+            <div>
+              <a
+                className="link"
+                href="#/users/23753"
+              >
+                tolmasky
+              </a>
+              opened 
+              10 hours ago
+            </div>
+          </div>
+        </li>
+        <li
+          className="issue-item"
+        >
+          <div
+            className="header"
+          >
+            <a
+              className="link title"
+              href="#/issues/3333"
+            >
+              How to wrap events in React 16
+            </a>
+            <span
+              className="tag-0"
+            >
+              Component: Core
+            </span>
+            <span
+              className="tag-1"
+            >
+              Type: Discussion
+            </span>
+          </div>
+          <div
+            className="content"
+          >
+            <div>
+              #
+              3333
+            </div>
+            <img
+              className="avatar"
+              src="https://avatars2.githubusercontent.com/u/23753?v=4"
+            />
+            <div>
+              <a
+                className="link"
+                href="#/users/1111"
+              >
+                bochen2014
+              </a>
+              opened 
+              a day ago
+            </div>
+          </div>
+        </li>
+        <li
+          className="issue-item"
+        >
+          <div
+            className="header"
+          >
+            <a
+              className="link title"
+              href="#/issues/2222"
+            >
+              How to wrap events in React 16
+            </a>
+            <span
+              className="tag-0"
+            >
+              Component: Core
+            </span>
+            <span
+              className="tag-1"
+            >
+              Type: Discussion
+            </span>
+          </div>
+          <div
+            className="content"
+          >
+            <div>
+              #
+              2222
+            </div>
+            <img
+              className="avatar"
+              src="https://avatars2.githubusercontent.com/u/23753?v=4"
+            />
+            <div>
+              <a
+                className="link"
+                href="#/users/3088823"
+              >
+                anushreesubramani
+              </a>
+              opened 
+              2 days ago
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 `;

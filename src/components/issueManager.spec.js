@@ -4,25 +4,25 @@ import IssueManager from './issueManager';
 
 jest.mock('../common/fetch');
 describe('Issue Manager', () => {
-    it('renders correctly', () => {
+    it('renders correctly', async () => {
         const component = renderer.create(<IssueManager />);
         /**
         › 1 snapshot written.
             console.log src\components\issueManager.js:71
-                ********** render ************
+                ********** render with loading=false (default) ************
 
             console.log src\components\issueManager.js:71
-                ********** render ************
+                ********** render with loading=true ************  //<---------------- if you don't create time gap, this would be the render result; jest won't wait fetch Promise to resolve
 
             console.log src\components\issueManager.js:71
-                ********** render ************
+                ********** render with loading=false (final, fetch promise resolved) ************ // <--------- this is what you really want
 
             Snapshot Summary
             › 1 snapshot written in 1 test suite.
-
-            we rendered 3 times with cdm called; data fetched (via __mock__/fetch); component re-rendered
-            but for some reason, snapshot is the 2nd one (loading one)
          */
+        //******************************************* */
+        await Promise.resolve(); // must create a time gap for fetch to resolve;
+        //******************************************* */
         expect(component.toJSON()).toMatchSnapshot();
 
     })

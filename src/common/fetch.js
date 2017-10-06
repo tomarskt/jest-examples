@@ -25,3 +25,8 @@ export default function callApi(endpoint, options) {
             return Promise.reject(err)
         })
 };
+
+//to demo why jest.genMockFromModule is required
+export function dummy(){
+    return 'hello'
+}

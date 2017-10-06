@@ -1,8 +1,9 @@
-// Manual mocks are defined by writing a module in a __mocks__/ subdirectory immediately adjacent to the module
-const fetch = jest.genMockFromModule('./fetch');
-fetch.default  = mock_fetch;
+// place me inside a __mocks__/ **subdirectory immediately adjacent** to the module
 
-//-------------------------------------------
+
+// genMockFromModule: Given the name of a module, use the automatic mocking system to generate a mocked version of the module for you.
+ const fetch = jest.genMockFromModule('../fetch'); // imagine your '../fetch' modlue has 1000 exports, this will mock all of them automatically;
+fetch.default  = mock_fetch;
 function mock_fetch(endpoint, options) {
     return Promise.resolve([
         {
@@ -68,7 +69,6 @@ function mock_fetch(endpoint, options) {
     ])
 }
 
-// for some reason, you don't have to use es5 pattern
-// module.exports={default: function(){...}}
-// it's not es5 syntax
-module.exports = mock_fetch; 
+
+module.exports = fetch; 
+// if the module being mocked is small, you can also do module.exports = mock_fetch;
