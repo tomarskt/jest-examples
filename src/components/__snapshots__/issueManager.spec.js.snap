@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Issue Manager renders correctly 1`] = `
+<div>
+  <div
+    id="change-repo"
+  >
+    <label
+      htmlFor="repo-url"
+    >
+      repo url:
+    </label>
+    <input
+      name="repo-url"
+      onChange={[Function]}
+      style={
+        Object {
+          "width": 600,
+        }
+      }
+      type="text"
+      value="https://api.github.com/repos/facebook/react/issues?state=all"
+    />
+    <button
+      onClick={[Function]}
+    >
+      Update
+    </button>
+  </div>
+  <div
+    id="issue-container"
+  >
+    <h2>
+      loading issue list...
+    </h2>
+  </div>
+</div>
+`;
