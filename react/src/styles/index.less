@@ -1,0 +1,112 @@
+@color-secondary: #627b8b;
+@color-secondary-hover: #394f63;
+@gray-dark: #24292e;
+@blue: #0366d6;
+* {
+    box-sizing: border-box;
+}
+ul,ol {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.issues-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e1e4e8;
+    border-radius: 3px 3px 0 0;
+    .issue-item {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 4px;
+        border-bottom: 1px solid #e1e4e8;
+        &:hover{
+            background-color: #f6f8fa;
+        }
+        &.issue-item-filter{
+            flex-direction: row !important;
+            background-color: #f6f8fa;
+            justify-content: space-between;
+            .filter-by{
+                span{
+                    color:#586069;
+                    margin-right: 8px;
+                    &.active{
+                        color:@blue;
+                    }
+                    &:hover{
+                        color:@blue;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .sort-by{
+                *:not(:last-child){
+                    margin-right:4px;
+                }
+            }
+        }
+        .link {
+            text-decoration: none !important;
+            color: @gray-dark;
+            &:hover {
+                color: @blue;
+            }
+        }
+        .flex-row-container() {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+        }
+        .header {
+            .flex-row-container();
+            a,
+            span {
+                &:first-child {
+                    margin-right: 6px !important;
+                }
+                margin-right:2px;
+            }
+            .title {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .tag {
+                padding: 3px 4px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            .tag-0 {
+                .tag();
+                background-color: #fbca04;
+                color: #332900;
+            }
+            .tag-1 {
+                .tag();
+                background-color: #cc317c;
+                color: #fff;
+            }
+            .tag-2 {
+                .tag();
+                background-color: #006b75;
+                color: #fff;
+            }
+        }
+        .content {
+            .flex-row-container();
+            .avatar {
+                height: 30px;
+                width: 30px;
+                border-radius: 50px;
+            }
+            div,img,label,span,a {
+                margin-right: 6px;
+            }
+            .user-name {
+                color: @blue;
+            }
+        }
+    }
+}
