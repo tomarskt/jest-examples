@@ -2,9 +2,11 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import IssueManager from './issueManager';
 
+
 jest.mock('../common/fetch');
 describe('Issue Manager', () => {
     it('renders correctly', async () => {
+        Date.now = jest.genMockFunction().mockReturnValue(1507270330454) // 6/10/2017 5:12 pm;
         const component = renderer.create(<IssueManager />);
         /**
         › 1 snapshot written.
@@ -24,6 +26,5 @@ describe('Issue Manager', () => {
         await Promise.resolve(); // must create a time gap for fetch to resolve;
         //******************************************* */
         expect(component.toJSON()).toMatchSnapshot();
-
     })
 });

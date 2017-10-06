@@ -137,7 +137,7 @@ exports[`Issue Manager renders correctly 1`] = `
                 tolmasky
               </a>
               opened 
-              10 hours ago
+              15 hours ago
             </div>
           </div>
         </li>
@@ -183,7 +183,7 @@ exports[`Issue Manager renders correctly 1`] = `
                 bochen2014
               </a>
               opened 
-              a day ago
+              2 days ago
             </div>
           </div>
         </li>
@@ -229,7 +229,7 @@ exports[`Issue Manager renders correctly 1`] = `
                 anushreesubramani
               </a>
               opened 
-              2 days ago
+              3 days ago
             </div>
           </div>
         </li>
