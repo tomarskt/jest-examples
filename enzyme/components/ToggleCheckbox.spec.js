@@ -40,14 +40,17 @@ describe('interaction', () => {
     expect(checkbox.text()).toEqual('On');
   })
 
-  it.only('spy', () => {
-    //arrange 
-    const wrapper = mount(<ToggleCheckbox />); // when shallowed, jest blindly call the event handler (dom is not involved)
-    const spy = jest.fn().mockImplementation(() => {
-      console.log('hello');
-    });
+  // https://github.com/facebook/jest/issues/4696
+  it('spy', () => {
+    //arrange
+    const spy = jest.fn().mockImplementation( ()=>{
+      console.log(`spy called`);
+    })
+    const wrapper = shallow(<ToggleCheckbox />); // switch between `shallow` and `mount` to see the difference
+                                                // whether ToggleCheckbox#onChange is invoked
+  
     wrapper.instance().onChange = spy
-    wrapper.update();
+    wrapper.update(); //Forces a re-render.
     //act
     // wrapper.instance().onChange()
     const myBtn = wrapper.find('MyButton')

@@ -1,13 +1,10 @@
-// Copyright 2004-present Facebook. All Rights Reserved.
-
-import React from 'react';
+import React, {Component} from 'react';
 import MyButton from './Mybutton'
-export default class ToggleCheckbox extends React.Component {
 
+class ToggleCheckbox extends Component {
   constructor(props) {
     super(props);
     this.state = { isChecked: false };
-
   }
 
   onChange = () => {
@@ -31,3 +28,5 @@ export default class ToggleCheckbox extends React.Component {
     );
   }
 }
+
+export default ToggleCheckbox;
