@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import ToggleCheckbox from '../ToggleCheckbox';
+import ToggleCheckbox from './ToggleCheckbox';
 
 
 describe('shallow', () => {
@@ -16,7 +16,7 @@ describe('shallow', () => {
     //click button defined in child component
     //const myBtn = wrapper.find('button')   // this will fail the test as we are just 'shallow' rendering the ToggleCheckbox 
     const myBtn = wrapper.find('MyButton') //we only render the fist level components
-    expect(myBtn.node).toBeTruthy() //this is react component defined by `import MyButton from './mybutton'`
+    expect(myBtn.length).toBe(1) //this is react component defined by `import MyButton from './mybutton'`
     myBtn.simulate('click'); // MyButton.onClick won't invoked; it's generally a bad idea to fire up events in shallow rendering case
     // AND **  my_callback in <MyButton onClick={ my_callback } /> is blindly called  **
     // I have a code inside MyButton which comment out the line of `this.props.onClick()` and that will only impact `mount`
@@ -44,7 +44,7 @@ it('spy on prototype methods', () => {
 
 //act
   const myBtn = wrapper.find('MyButton') //we only render the fist level components
-  expect(myBtn.node).toBeTruthy() //this is react component defined by `import MyButton from './mybutton'`
+  expect(myBtn.length).toBe(1) //this is react component defined by `import MyButton from './mybutton'`
   myBtn.simulate('click');
 
 //assert
@@ -55,7 +55,7 @@ it('spy on prototype methods', () => {
 
 
 describe('mount', () => {
-  it(' button click', () => {
+  it(' button click', async () => {
     const wrapper = mount(<ToggleCheckbox />)
     console.log(wrapper.html())
     //default to off
@@ -64,9 +64,10 @@ describe('mount', () => {
 
     //fire up a child event;
     const myBtn = wrapper.find('button')
-    expect(myBtn.node).toBeTruthy()
+    expect(myBtn.length).toBe(1);
     myBtn.simulate('click');  //this is exactly the same as you click the button in a real browser
 
+    await Promise.resolve();
     //check it again
     console.log(wrapper.html())
     checkbox = wrapper.find('label')

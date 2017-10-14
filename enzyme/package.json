@@ -4,24 +4,26 @@
     "test-one": "jest form.spec.jsx --debug"
   },
   "dependencies": {
-    "react": "~15.3.1",
-    "react-dom": "~15.3.1"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "babel-jest": "*",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-polyfill": "*",
     "babel-preset-es2015": "*",
     "babel-preset-react": "*",
-    "enzyme": "~2.4.1",
-    "jest": "*",
-    "react-addons-test-utils": "15.3.2",
-    "react-test-renderer": "^15.4.2",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "jest": "^21.1.0",
+    "react-addons-test-utils": "^15.3.2",
+    "react-test-renderer": "^16.0.0",
     "redux-form": "^6.4.3"
   },
   "jest": {
     "verbose": false,
     "bail": true,
     "testEnvironment": "jsdom",
-    "setupTestFrameworkScriptFile": "./__setup.js"
+    "setupFiles": ["<rootDir>/shim.js","<rootDir>/__setup.js"]
   }
 }

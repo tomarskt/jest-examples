@@ -1,10 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Form should render correctly 1`] = `
 <form>
   <Field
     component="input"
-    name="title" />
+    name="title"
+  />
   <Field
     component="textarea"
-    name="description" />
+    name="description"
+  />
 </form>
 `;

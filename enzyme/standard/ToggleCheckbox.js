@@ -12,7 +12,7 @@ export default class ToggleCheckbox extends React.Component {
   }
 
   componentDidMount() {
-    console.log('######## componentDidMount called  ##################')
+    console.log(' ........  componentDidMount called')
   }
   
   onChange() {
