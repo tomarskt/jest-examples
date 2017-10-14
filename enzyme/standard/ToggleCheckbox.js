@@ -8,14 +8,10 @@ export default class ToggleCheckbox extends React.Component {
     super(props);
     this.state = { isChecked: false };
 
-    this.onChange = this.onChange.bind(this);
   }
 
-  componentDidMount() {
-    console.log(' ........  componentDidMount called')
-  }
-  
-  onChange() {
+  onChange = () => {
+    console.log('............ this.onChange is invoked  ...')
     this.setState({ isChecked: !this.state.isChecked });
   }
 
@@ -27,8 +23,8 @@ export default class ToggleCheckbox extends React.Component {
             type="checkbox"
             checked={this.state.isChecked}
             onChange={this.onChange}
-            />
-          {this.state.isChecked ? 'On':'Off'}
+          />
+          {this.state.isChecked ? 'On' : 'Off'}
         </label>
         <MyButton onClick={this.onChange} />
       </div>

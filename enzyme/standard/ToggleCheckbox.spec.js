@@ -32,16 +32,14 @@ describe('shallow', () => {
 });
 
 
-it('spy on prototype methods', () => {
+it('spy methods', () => {
 //arrange 
   const onChangeSpy = jest.fn();
-  ToggleCheckbox.prototype.onChange = onChangeSpy;  //must before shallow!!!
+  ToggleCheckbox.onChange = onChangeSpy;  //must before shallow!!!
 
   const wrapper = shallow(
     <ToggleCheckbox />
   )
-  
-
 //act
   const myBtn = wrapper.find('MyButton') //we only render the fist level components
   expect(myBtn.length).toBe(1) //this is react component defined by `import MyButton from './mybutton'`
@@ -50,12 +48,11 @@ it('spy on prototype methods', () => {
 //assert
   expect(onChangeSpy.mock.calls.length).toBe(1)
   expect(onChangeSpy).toBeCalled()
-
 });
 
 
 describe('mount', () => {
-  it(' button click', async () => {
+  it(' button click', () => {
     const wrapper = mount(<ToggleCheckbox />)
     console.log(wrapper.html())
     //default to off
@@ -67,7 +64,6 @@ describe('mount', () => {
     expect(myBtn.length).toBe(1);
     myBtn.simulate('click');  //this is exactly the same as you click the button in a real browser
 
-    await Promise.resolve();
     //check it again
     console.log(wrapper.html())
     checkbox = wrapper.find('label')

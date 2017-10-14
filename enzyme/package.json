@@ -10,6 +10,8 @@
   "devDependencies": {
     "babel-jest": "*",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "*",
     "babel-preset-es2015": "*",
     "babel-preset-react": "*",
@@ -24,6 +26,6 @@
     "verbose": false,
     "bail": true,
     "testEnvironment": "jsdom",
-    "setupFiles": ["<rootDir>/shim.js","<rootDir>/__setup.js"]
+    "setupFiles": ["<rootDir>/setup/shim.js","<rootDir>/setup/index.js"]
   }
 }

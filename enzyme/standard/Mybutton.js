@@ -5,9 +5,6 @@ class MyButton extends Component {
         this.onClick = this.onClick.bind(this)
     }
     onClick(){
-        console.log('............ Mybutton is clicked')
-        // try to comment this line out;
-        // you shallow render test still pass, while deep rendering one will fail
         this.props.onClick()
     }
     render() {
