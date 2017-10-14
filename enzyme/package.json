@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "jest",
-    "test-one": "jest form.spec.jsx --debug"
+    "debug-test": "node --debug-brk node_modules/jest/bin/jest.js  --no-cache --runInBand  "
   },
   "dependencies": {
     "react": "^16.0.0",
