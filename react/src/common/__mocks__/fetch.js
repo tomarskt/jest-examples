@@ -75,7 +75,10 @@ fetchModule.default = callApi; // standard babel@6 transpiled result
 // mimicking wrapper module (like React/index.js)
 // babel es6 consumers are fine with both ways, but perfer the 1st approach as it's the babel@6 transpile behavior; 2nd is babel@5 and is deprecated now
 module.exports.default = fetchModule; // targeting typescript consumers; (can do import Fetch from './fetch';)
-exports = fetchModule;  // `exports=xyz` is short for `module.exports=xyz`;    targeting es5 consumers; 
+
+// `exports=xyz` is short for `module.exports=xyz`; **doesn't work here**
+module.exports = fetchModule; //targeting es5 consumers; 
+
 // this is what `babel-plugin-add-module-exports` does essentially; (commonJS can do var fetch = require('./fetch'); )
 
 // if the module being mocked is small, you can also do module.exports = mock_fetch;
