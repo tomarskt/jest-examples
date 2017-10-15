@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import TestRenderer from 'react-test-renderer';
 import ToggleCheckbox from './ToggleCheckbox';
 
 describe('interaction', () => {
@@ -43,12 +44,12 @@ describe('interaction', () => {
   // https://github.com/facebook/jest/issues/4696
   it('spy', () => {
     //arrange
-    const spy = jest.fn().mockImplementation( ()=>{
+    const spy = jest.fn().mockImplementation(() => {
       console.log(`spy called`);
     })
     const wrapper = shallow(<ToggleCheckbox />); // switch between `shallow` and `mount` to see the difference
-                                                // whether ToggleCheckbox#onChange is invoked
-  
+    // whether ToggleCheckbox#onChange is invoked
+
     wrapper.instance().onChange = spy
     wrapper.update(); //Forces a re-render.
     //act
@@ -60,7 +61,12 @@ describe('interaction', () => {
     //assert
     expect(spy).toBeCalled();
   });
-
-
-
+  // couldn't get it work 
+  // https://reactjs.org/docs/test-renderer.html
+  it.skip('spy2', () => {
+      const testRenderer = TestRenderer.create( <ToggleCheckbox />);
+      const root = testRenderer.root;
+      const testInstance = testRenderer.getInstance();
+      testInstance.findByType('MyButton');
+  })
 })

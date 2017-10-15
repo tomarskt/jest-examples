@@ -4,8 +4,8 @@
     "debug-test": "node --debug-brk node_modules/jest/bin/jest.js  --no-cache --runInBand  "
   },
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "16.0.0-alpha.12",
+    "react-dom": "16.0.0-alpha.12"
   },
   "devDependencies": {
     "babel-jest": "*",
@@ -19,7 +19,7 @@
     "enzyme-adapter-react-16": "^1.0.1",
     "jest": "^21.1.0",
     "react-addons-test-utils": "^15.3.2",
-    "react-test-renderer": "^16.0.0",
+    "react-test-renderer": "16.0.0-alpha.12",
     "redux-form": "^6.4.3"
   },
   "jest": {
