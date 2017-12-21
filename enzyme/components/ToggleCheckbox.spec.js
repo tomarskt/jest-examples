@@ -6,9 +6,7 @@ import ToggleCheckbox from './ToggleCheckbox';
 describe('interaction', () => {
 
   it('shallow', () => {
-    const wrapper = shallow(
-      <ToggleCheckbox />
-    )
+    const wrapper = shallow(<ToggleCheckbox />);
     let checkbox = wrapper.find('label')
     expect(checkbox.text()).toEqual('Off');
 
@@ -41,32 +39,32 @@ describe('interaction', () => {
     expect(checkbox.text()).toEqual('On');
   })
 
-  // https://github.com/facebook/jest/issues/4696
-  it('spy', () => {
+  it.skip('spy', () => {
     //arrange
     const spy = jest.fn().mockImplementation(() => {
       console.log(`spy called`);
-    })
-    const wrapper = shallow(<ToggleCheckbox />); // switch between `shallow` and `mount` to see the difference
+    });
+
+    const wrapper = mount(<ToggleCheckbox />); // switch between `shallow` and `mount` to see the difference
     // whether ToggleCheckbox#onChange is invoked
 
-    wrapper.instance().onChange = spy
+    // https://github.com/facebook/jest/issues/4696
+    //  ToggleCheckbox.prototype.onChange = spy;
+    wrapper.instance().onChange = spy;
     wrapper.update(); //Forces a re-render.
     //act
     // wrapper.instance().onChange()
     const myBtn = wrapper.find('MyButton')
     expect(myBtn.length).toBe(1);
     myBtn.simulate('click');
-
     //assert
     expect(spy).toBeCalled();
-  });
-  // couldn't get it work 
-  // https://reactjs.org/docs/test-renderer.html
-  it.skip('spy2', () => {
-      const testRenderer = TestRenderer.create( <ToggleCheckbox />);
-      const root = testRenderer.root;
-      const testInstance = testRenderer.getInstance();
-      testInstance.findByType('MyButton');
   })
-})
+
+  it.skip('testRenderer', () => { // not working either;
+    const testRenderer = TestRenderer.create(<ToggleCheckbox />);
+    const root = testRenderer.root;
+    const testInstance = testRenderer.getInstance();
+    testInstance.findByType('MyButton');
+  })
+});
