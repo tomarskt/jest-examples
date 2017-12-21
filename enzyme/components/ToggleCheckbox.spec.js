@@ -40,6 +40,7 @@ describe('interaction', () => {
   })
 
   it('spyOn', () => {
+    // https://github.com/facebook/jest/issues/4696
     //https://github.com/airbnb/enzyme/issues/944
     // ********************************** jest.spyOn(Component.prototype, 'methodName') ***************************************************
           // Creates a mock function similar to jest.fn but also tracks calls to object[methodName]. Returns a Jest mock function.
