@@ -4,28 +4,22 @@
     "debug-test": "node --debug-brk node_modules/jest/bin/jest.js  --no-cache --runInBand  "
   },
   "dependencies": {
-    "react": "16.0.0-alpha.12",
-    "react-dom": "16.0.0-alpha.12"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
-    "babel-jest": "*",
+    "babel-jest": "^22.0.3",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "*",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "*",
     "babel-preset-react": "*",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
-    "jest": "^21.1.0",
+    "jest": "^22.0.3",
     "react-addons-test-utils": "^15.3.2",
     "react-test-renderer": "16.0.0-alpha.12",
     "redux-form": "^6.4.3"
-  },
-  "jest": {
-    "verbose": false,
-    "bail": true,
-    "testEnvironment": "jsdom",
-    "setupFiles": ["<rootDir>/setup/shim.js","<rootDir>/setup/index.js"]
   }
 }
