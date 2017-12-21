@@ -39,21 +39,14 @@ describe('interaction', () => {
     expect(checkbox.text()).toEqual('On');
   })
 
-  it.skip('spy', () => {
-    //arrange
-    const spy = jest.fn().mockImplementation(() => {
-      console.log(`spy called`);
-    });
+  it('spyOn', () => {
+    //https://github.com/airbnb/enzyme/issues/944
+    // ********************************** jest.spyOn(Component.prototype, 'methodName') ***************************************************
+          // Creates a mock function similar to jest.fn but also tracks calls to object[methodName]. Returns a Jest mock function.
+          const spy = jest.spyOn(ToggleCheckbox.prototype, 'onChange');
+    // **********************************************************************************************************************
+    const wrapper = shallow(<ToggleCheckbox />); // switch between `shallow` and `mount` to see the difference
 
-    const wrapper = mount(<ToggleCheckbox />); // switch between `shallow` and `mount` to see the difference
-    // whether ToggleCheckbox#onChange is invoked
-
-    // https://github.com/facebook/jest/issues/4696
-    //  ToggleCheckbox.prototype.onChange = spy;
-    wrapper.instance().onChange = spy;
-    wrapper.update(); //Forces a re-render.
-    //act
-    // wrapper.instance().onChange()
     const myBtn = wrapper.find('MyButton')
     expect(myBtn.length).toBe(1);
     myBtn.simulate('click');
