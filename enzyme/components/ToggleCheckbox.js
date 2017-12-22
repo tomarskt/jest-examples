@@ -5,10 +5,9 @@ class ToggleCheckbox extends Component {
   constructor(props) {
     super(props);
     this.state = { isChecked: false };
-    this.onChange = this.onChange.bind(this);
   }
 
-  onChange() {
+  onChange = () => {
     console.log(' ---------------------- this.onChange is invoked  ---------------------- ')
     this.setState({ isChecked: !this.state.isChecked });
   }
