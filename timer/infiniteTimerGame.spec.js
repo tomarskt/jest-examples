@@ -1,11 +1,10 @@
 // Copyright 2004-present Facebook. All Rights Reserved.
 
-'use strict';
+import infiniteTimerGame from './infiniteTimerGame';
 
-jest.useFakeTimers();
+jest.useFakeTimers(); // setTimeout.mock
 
 it('schedules a 10-second timer after 1 second', () => {
-  const infiniteTimerGame = require('../infiniteTimerGame');
   const callback = jest.fn();
 
   infiniteTimerGame(callback);
@@ -25,5 +24,11 @@ it('schedules a 10-second timer after 1 second', () => {
   // And it should have created a new timer to start the game over in
   // 10 seconds
   expect(setTimeout.mock.calls.length).toBe(2);
-  expect(setTimeout.mock.calls[1][1]).toBe(10000);
+  expect(setTimeout.mock.calls[1][1]).toBe(5000);
+
+   jest.runOnlyPendingTimers();
+  expect(setTimeout.mock.calls.length).toBe(3);
+  expect(setTimeout.mock.calls[1][1]).toBe(5000);
+
+
 });

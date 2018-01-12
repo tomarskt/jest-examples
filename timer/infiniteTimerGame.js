@@ -12,7 +12,7 @@ function infiniteTimerGame(callback) {
     // Schedule the next game in 10 seconds
     setTimeout(() => {
       infiniteTimerGame(callback);
-    }, 10000);
+    }, 5000);
 
   }, 1000);
 }

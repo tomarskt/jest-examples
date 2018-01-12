@@ -5,7 +5,7 @@
 function timerGame(callback) {
   console.log('Ready....go!');
   setTimeout(() => {
-    console.log('Times up -- stop!');
+    console.log('Times up -- stop!'); // need to call jest.runAllTimers() to advance the timer;
     callback && callback();
   }, 1000);
 }
