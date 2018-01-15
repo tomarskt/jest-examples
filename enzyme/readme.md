@@ -1,0 +1,1 @@
+https://github.com/tmpvar/jsdom/issues/1843#issuecomment-357556277
