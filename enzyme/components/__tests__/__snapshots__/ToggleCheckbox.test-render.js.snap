@@ -10,12 +10,8 @@ exports[`using react-test-renderer testRenderer 1`] = `
     />
     Off
   </label>
-  <div>
-    <button
-      onClick={[Function]}
-    >
-      click me!
-    </button>
-  </div>
+  <MyFancyButton
+    onClick={[Function]}
+  />
 </div>
 `;
