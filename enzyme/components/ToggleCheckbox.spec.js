@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import TestRenderer from 'react-test-renderer';
 import ToggleCheckbox from './ToggleCheckbox';
 
-describe('interaction', () => {
+describe('using enzyme', () => {
 
   it('shallow', () => {
     const wrapper = shallow(<ToggleCheckbox />);
@@ -55,10 +54,4 @@ describe('interaction', () => {
     expect(spy).toBeCalled();
   })
 
-  it.skip('testRenderer', () => { // not working either;
-    const testRenderer = TestRenderer.create(<ToggleCheckbox />);
-    const root = testRenderer.root;
-    const testInstance = testRenderer.getInstance();
-    testInstance.findByType('MyButton');
-  })
 });
