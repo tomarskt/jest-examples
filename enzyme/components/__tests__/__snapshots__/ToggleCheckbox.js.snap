@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`using enzyme shallow 1`] = `
+<div>
+  <label>
+    <input
+      checked={false}
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Off
+  </label>
+  <MyButton
+    onClick={[Function]}
+  />
+</div>
+`;
