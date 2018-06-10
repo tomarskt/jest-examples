@@ -10,6 +10,9 @@ exports[`using react-test-renderer re-mock 1`] = `
     />
     Off
   </label>
+  <My-Fancy-Button
+    onClick={[Function]}
+  />
 </div>
 `;
 
@@ -23,5 +26,8 @@ exports[`using react-test-renderer testRenderer 1`] = `
     />
     Off
   </label>
+  <My-Fancy-Button
+    onClick={[Function]}
+  />
 </div>
 `;
