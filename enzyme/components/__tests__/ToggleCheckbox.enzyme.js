@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import ToggleCheckbox from './ToggleCheckbox';
+import ToggleCheckbox from '../ToggleCheckbox';
 
 describe('using enzyme', () => {
 
