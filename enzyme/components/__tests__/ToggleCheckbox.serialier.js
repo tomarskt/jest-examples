@@ -8,6 +8,6 @@ describe('using enzyme', () => {
         // because it's shallow rendered, its children won't be hydrated;
         // result snapshot has <ToggleCheckbox> <MyButton/></ToggleCheckbox> structure
         const shallowed = shallow(<ToggleCheckbox />);
-        expect(shallowed).toMatchSnapshot();
+        expect(shallowed).toMatchSnapshot(); // this is because of `enzyme-to-json/serializer`
     });
 });

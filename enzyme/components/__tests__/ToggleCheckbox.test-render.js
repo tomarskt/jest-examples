@@ -13,8 +13,8 @@ describe('using react-test-renderer', () => {
         const testRenderer = TestRenderer.create(<ToggleCheckbox />);
         expect(testRenderer.toJSON()).toMatchSnapshot();
     });
-    it('re-mock', () => {
-        jest.mock('../Mybutton', ()=>'Another-Button' ); // limitation: this won't work; once it's done, it's done. you can't change it
+    it(`can't re-mock, once it's done, it's done` , () => {
+        jest.mock('../Mybutton', ()=>'Another-Button' ); // limitation: this won't work; you can't change an existing module
         const testRenderer = TestRenderer.create(<ToggleCheckbox />);
         expect(testRenderer.toJSON()).toMatchSnapshot();
     })
