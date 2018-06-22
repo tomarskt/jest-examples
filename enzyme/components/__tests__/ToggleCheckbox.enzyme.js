@@ -2,10 +2,16 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import ToggleCheckbox from '../ToggleCheckbox';
 
+const spy = jest.spyOn(console,'error').mockImplementation(()=>{ /*mute console*/});
+
 describe('using enzyme', () => {
 
-  it('shallow', () => {
+  it.only('shallow', () => {
     const wrapper = shallow(<ToggleCheckbox />);
+
+    expect(spy).toHaveBeenCalledTimes(1);
+    spy.mockClear(); // reset mock.calls and mock.instances, but keep the mock itself
+
     let checkbox = wrapper.find('label')
     expect(checkbox.text()).toEqual('Off');
 
