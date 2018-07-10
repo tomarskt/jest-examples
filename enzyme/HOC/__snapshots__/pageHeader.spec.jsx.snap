@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeader Test should match snapshot for simple PageHeader 1`] = `
+<div>
+  <h1>
+    hamburger menu
+  </h1>
+</div>
+`;
