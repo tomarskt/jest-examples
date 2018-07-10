@@ -3,7 +3,7 @@
 // }));
 
 debugger;
-jest.mock('react-router'); //=================================> this is hoisted by jest, to make sure it's exuected before *anything else*
+jest.mock('react-router'); //=================================> this is hoisted by babel-jest-hoist, to make sure it's exuected before *anything else*
 const ReactRouter = require("react-router");
 
 
