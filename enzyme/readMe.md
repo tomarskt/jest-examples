@@ -28,6 +28,10 @@ test('implementation created by jest.genMockFromModule', () => {
 ```
 
 
+## mock node modules
+> see the example of mocking `lerna-test-gel-iframe`
+https://jestjs.io/docs/en/manual-mocks#mocking-node-modules
+
 
 ## manual mock
 https://jestjs.io/docs/en/jest-object#jestmockmodulename-factory-options

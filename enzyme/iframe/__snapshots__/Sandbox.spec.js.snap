@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iframe should render 1`] = `
+<GelXIframe
+  displayLoader={<MockDisplayLoader />}
+  sandbox="allow-forms allow-scripts "
+  url="http://unit-test.com"
+/>
+`;

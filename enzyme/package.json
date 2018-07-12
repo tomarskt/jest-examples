@@ -21,6 +21,7 @@
     "jest": "^23.1.0",
     "react-router-dom": "^4.3.1",
     "react-test-renderer": "^16.4.0",
-    "redux-form": "^7.3.0"
+    "redux-form": "^7.3.0",
+    "lerna-test-library": "^1.2.1"
   }
 }
