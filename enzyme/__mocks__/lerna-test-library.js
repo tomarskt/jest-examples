@@ -13,6 +13,6 @@ export class GelXIframe extends PureComponent {
   }
   render() {
     const { url } = this.props;
-    return <div>iframe source ={url}</div>;
+    return <div>mocked ver :iframe source ={url}</div>;
   }
 }

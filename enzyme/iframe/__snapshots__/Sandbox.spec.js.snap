@@ -1,9 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`iframe should render 1`] = `
+exports[`iframe should deep render correctly 1`] = `
+<Sandbox
+  url="http://unit-test.com"
+>
+  <GelXIframe
+    displayLoader={<MockDisplayLoader />}
+    postMessage={[Function]}
+    url="http://unit-test.com"
+  >
+    <div>
+      mocked ver :iframe source =
+      http://unit-test.com
+    </div>
+  </GelXIframe>
+</Sandbox>
+`;
+
+exports[`iframe should shallow render correctly  1`] = `
 <GelXIframe
   displayLoader={<MockDisplayLoader />}
-  sandbox="allow-forms allow-scripts "
+  postMessage={[Function]}
   url="http://unit-test.com"
 />
 `;
