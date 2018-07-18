@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Fragment, Component } from "react";
 import { GelXIframe } from "lerna-test-library";
 
 import DisplayLoader from "./displayloader";
@@ -9,17 +9,22 @@ class Sandbox extends Component {
     const {
       data: { value }
     } = e;
-    console.warn("********  you need to see me in your unit test  ************");
+    console.warn(
+      "********  you need to see me in your unit test  ************"
+    );
     dispatch({ value: value + 1 });
   };
   render() {
     const { url, postMessage } = this.props;
     return (
-      <GelXIframe
-        displayLoader={<DisplayLoader />}
-        url={url}
-        postMessage={this.postMessage}
-      />
+      <Fragment>
+        <DisplayLoader />
+        <GelXIframe
+          displayLoader={<DisplayLoader />}
+          url={url}
+          postMessage={this.postMessage}
+        />
+      </Fragment>
     );
   }
 }

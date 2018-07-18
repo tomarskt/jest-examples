@@ -2,14 +2,14 @@
 
 exports[`mock twice mock a module 1`] = `
 <GelXIframe
-  displayLoader={<mocked-version-one />}
+  displayLoader={<version ONE />}
   postMessage={[Function]}
 />
 `;
 
 exports[`mock twice mock same module again 1`] = `
 <GelXIframe
-  displayLoader={<mocked-version-two />}
+  displayLoader={<version ONE />}
   postMessage={[Function]}
 />
 `;
