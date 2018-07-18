@@ -4,23 +4,30 @@ exports[`iframe should deep render correctly 1`] = `
 <Sandbox
   url="http://unit-test.com"
 >
+  <MockDisplayLoader />
   <GelXIframe
     displayLoader={<MockDisplayLoader />}
     postMessage={[Function]}
     url="http://unit-test.com"
   >
     <div>
-      mocked ver :iframe source =
-      http://unit-test.com
+      <MockDisplayLoader />
+      <div>
+        mocked ver :iframe source =
+        http://unit-test.com
+      </div>
     </div>
   </GelXIframe>
 </Sandbox>
 `;
 
 exports[`iframe should shallow render correctly  1`] = `
-<GelXIframe
-  displayLoader={<MockDisplayLoader />}
-  postMessage={[Function]}
-  url="http://unit-test.com"
-/>
+<React.Fragment>
+  <MockDisplayLoader />
+  <GelXIframe
+    displayLoader={<MockDisplayLoader />}
+    postMessage={[Function]}
+    url="http://unit-test.com"
+  />
+</React.Fragment>
 `;

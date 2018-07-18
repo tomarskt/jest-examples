@@ -1,8 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
 
-debugger;
-
 const PageHeader = ({ location: { pathname } }) => {
   return (
     <div>
