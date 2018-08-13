@@ -1,13 +1,13 @@
 import getMyOpportunities from "./myOpportunities.selector";
 
-let mockOpportunities = [{ id: 0, name: "initial" }];
-jest.mock("./opportunities.selector", () => ({
-  getOpportunities: () => mockOpportunities
+let mockXXX = [{ id: 0, name: "initial" }];
+jest.mock("./dependency", () => ({
+  dependencyFunction: () => mockXXX
 }));
 
 describe("myOpportunities selector", () => {
   it("should sort ", () => {
-    mockOpportunities = [
+    mockXXX = [
       {
         id: 1,
         name: "a"
@@ -26,7 +26,7 @@ describe("myOpportunities selector", () => {
   });
 
   it("should sort ", () => {
-    mockOpportunities = [
+    mockXXX = [
       {
         id: 1,
         name: "aa"
