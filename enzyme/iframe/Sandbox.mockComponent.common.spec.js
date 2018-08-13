@@ -6,7 +6,7 @@ import SandBox from "./Sandbox";
 jest.mock("./displayloader", ()=>()=><div>Hello</div>); //a non naive mock
 
 describe("mock twice", () => {
-  it.only("mock a module", () => {
+  it("mock a module", () => {
     // with shallow, you won't be able to see Hello as it's ONLY SHALLOW RENDERED
     const mounted = mount(<SandBox url='http://unit-test.com'/>);
     expect(mounted).toMatchSnapshot();

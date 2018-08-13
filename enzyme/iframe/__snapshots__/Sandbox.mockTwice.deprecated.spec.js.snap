@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mock twice mock a module 1`] = `
+<React.Fragment>
+  <mocked-version-one />
+  <GelXIframe
+    displayLoader={<mocked-version-one />}
+    postMessage={[Function]}
+  />
+</React.Fragment>
+`;
+
+exports[`mock twice mock same module again 1`] = `
+<React.Fragment>
+  <mocked-version-two />
+  <GelXIframe
+    displayLoader={<mocked-version-two />}
+    postMessage={[Function]}
+  />
+</React.Fragment>
+`;

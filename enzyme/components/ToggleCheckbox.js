@@ -1,30 +1,34 @@
-import React, { Component } from 'react';
-import MyButton from './Mybutton'
+import React, { Component } from "react";
+import MyButton from "./Mybutton";
+import chalk from "chalk";
+import MyCheckbox from "./MyCheckbox";
 
 class ToggleCheckbox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isChecked: false };
+  constructor() {
+    super();
     this.onChange = this.onChange.bind(this);
   }
 
+  state = {
+    isChecked: false
+  };
+
   onChange() {
-    console.log(' ---------------------- this.onChange is invoked  ---------------------- ')
+    console.log(
+      chalk.cyan(
+        " ---------------------- this.onChange is invoked  ---------------------- "
+      )
+    );
     this.setState({ isChecked: !this.state.isChecked });
   }
 
   render() {
+    const { isChecked } = this.state;
     return (
       <div>
-        <label>
-          <input
-            type="checkbox"
-            checked={this.state.isChecked}
-            onChange={this.onChange}
-          />
-          {this.state.isChecked ? 'On' : 'Off'}
-        </label>
+        <MyCheckbox isChecked={isChecked} onChange={this.onChange} />
         <MyButton onClick={this.onChange} />
+        <label>{isChecked ? "On" : "Off"}</label>
       </div>
     );
   }
