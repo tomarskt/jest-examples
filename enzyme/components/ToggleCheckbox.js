@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
-import MyButton from './Mybutton'
+import React, { Component } from "react";
+import MyButton from "./Mybutton";
 
 class ToggleCheckbox extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isChecked: false };
+  constructor() {
+    super();
     this.onChange = this.onChange.bind(this);
   }
 
+  state = {
+    isChecked: false
+  };
+
   onChange() {
-    console.log(' ---------------------- this.onChange is invoked  ---------------------- ')
+    console.log(
+      " ---------------------- this.onChange is invoked  ---------------------- "
+    );
     this.setState({ isChecked: !this.state.isChecked });
   }
 
@@ -22,7 +27,7 @@ class ToggleCheckbox extends Component {
             checked={this.state.isChecked}
             onChange={this.onChange}
           />
-          {this.state.isChecked ? 'On' : 'Off'}
+          {this.state.isChecked ? "On" : "Off"}
         </label>
         <MyButton onClick={this.onChange} />
       </div>
