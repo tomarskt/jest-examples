@@ -12,6 +12,7 @@ class ToggleCheckbox extends Component {
   };
 
   onChange() {
+    debugger;
     console.log(
       " ---------------------- this.onChange is invoked  ---------------------- "
     );

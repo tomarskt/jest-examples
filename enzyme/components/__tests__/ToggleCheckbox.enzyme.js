@@ -7,7 +7,7 @@ const spy = jest.spyOn(console, "error").mockImplementation(() => {
 });
 
 describe("using enzyme", () => {
-  it.only("shallow", () => {
+  it("shallow", () => {
     const wrapper = shallow(<ToggleCheckbox />);
 
     expect(spy).toHaveBeenCalledTimes(1);
@@ -57,14 +57,16 @@ describe("using enzyme", () => {
     // **********************************************************************************************************************
     const wrapper = shallow(<ToggleCheckbox />); // see the next test to see the mount case;
 
-    const myBtn = wrapper.find("myButton"); // ===> key difference
+    const myBtn = wrapper.find("MyButton"); // ===> key difference
     expect(myBtn.length).toBe(1);
     myBtn.simulate("click");
 
     expect(spy).toBeCalled();
+    expect(spy).toHaveBeenCalledTimes(1);
+    // expect(spy).toBeCalledWith({something});
   });
 
-  it.only("spyOn mount", () => {
+  it("spyOn mount", () => {
     // https://github.com/facebook/jest/issues/4696
     //https://github.com/airbnb/enzyme/issues/944
     // ********************************** jest.spyOn(Component.prototype, 'methodName') ***************************************************
@@ -81,5 +83,7 @@ describe("using enzyme", () => {
     myBtn.simulate("click");
     //assert
     expect(spy).toBeCalled();
+    expect(spy).toHaveBeenCalledTimes(1);
+    // expect(spy).toBeCalledWith({something});
   });
 });
