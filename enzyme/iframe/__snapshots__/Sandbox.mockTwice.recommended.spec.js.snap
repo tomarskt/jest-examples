@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`recommended: mock twice using version ONE 1`] = `
+<Sandbox
+  url="http://unit-test.com"
+>
+  <Component>
+    <div>
+      Version One
+    </div>
+  </Component>
+  <GelXIframe
+    displayLoader={<Unknown />}
+    postMessage={[Function]}
+    url="http://unit-test.com"
+  >
+    <div>
+      <Component>
+        <div>
+          Version One
+        </div>
+      </Component>
+      <div>
+        mocked ver :iframe source =
+        http://unit-test.com
+      </div>
+    </div>
+  </GelXIframe>
+</Sandbox>
+`;
+
+exports[`recommended: mock twice using version TWO 1`] = `
+<Sandbox
+  url="http://unit-test.com"
+>
+  <Component>
+    <div>
+      Version TWO
+    </div>
+  </Component>
+  <GelXIframe
+    displayLoader={<Unknown />}
+    postMessage={[Function]}
+    url="http://unit-test.com"
+  >
+    <div>
+      <Component>
+        <div>
+          Version TWO
+        </div>
+      </Component>
+      <div>
+        mocked ver :iframe source =
+        http://unit-test.com
+      </div>
+    </div>
+  </GelXIframe>
+</Sandbox>
+`;

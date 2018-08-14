@@ -2,16 +2,15 @@
 
 exports[`using enzyme shallow 1`] = `
 <div>
-  <label>
-    <input
-      checked={false}
-      onChange={[Function]}
-      type="checkbox"
-    />
-    Off
-  </label>
+  <MyCheckbox
+    isChecked={false}
+    onChange={[Function]}
+  />
   <MyButton
     onClick={[Function]}
   />
+  <label>
+    Off
+  </label>
 </div>
 `;

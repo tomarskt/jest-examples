@@ -6,7 +6,7 @@ const spy = jest.spyOn(console, "error").mockImplementation(() => {
   /*mute console*/
 });
 
-describe("using enzyme", () => {
+describe("enzyme", () => {
   it("shallow", () => {
     const wrapper = shallow(<ToggleCheckbox />);
 

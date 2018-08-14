@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import MyButton from "./Mybutton";
+import chalk from "chalk";
+import MyCheckbox from "./MyCheckbox";
 
 class ToggleCheckbox extends Component {
   constructor() {
@@ -12,25 +14,21 @@ class ToggleCheckbox extends Component {
   };
 
   onChange() {
-    debugger;
     console.log(
-      " ---------------------- this.onChange is invoked  ---------------------- "
+      chalk.cyan(
+        " ---------------------- this.onChange is invoked  ---------------------- "
+      )
     );
     this.setState({ isChecked: !this.state.isChecked });
   }
 
   render() {
+    const { isChecked } = this.state;
     return (
       <div>
-        <label>
-          <input
-            type="checkbox"
-            checked={this.state.isChecked}
-            onChange={this.onChange}
-          />
-          {this.state.isChecked ? "On" : "Off"}
-        </label>
+        <MyCheckbox isChecked={isChecked} onChange={this.onChange} />
         <MyButton onClick={this.onChange} />
+        <label>{isChecked ? "On" : "Off"}</label>
       </div>
     );
   }

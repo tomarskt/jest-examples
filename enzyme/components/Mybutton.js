@@ -5,7 +5,7 @@ import MyLabel from "./MyLabel";
 class MyButton extends Component {
   constructor(props) {
     super(props);
-    console.log('*****************  MyButton is constructed')
+    console.log("*****************  MyButton is constructed");
     this.onClick = this.onClick.bind(this);
   }
   onClick() {

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mock twice mock a module 1`] = `
+<Sandbox
+  url="http://unit-test.com"
+>
+  <Component>
+    <div>
+      Hello
+    </div>
+  </Component>
+  <GelXIframe
+    displayLoader={<Unknown />}
+    postMessage={[Function]}
+    url="http://unit-test.com"
+  >
+    <div>
+      <Component>
+        <div>
+          Hello
+        </div>
+      </Component>
+      <div>
+        mocked ver :iframe source =
+        http://unit-test.com
+      </div>
+    </div>
+  </GelXIframe>
+</Sandbox>
+`;
