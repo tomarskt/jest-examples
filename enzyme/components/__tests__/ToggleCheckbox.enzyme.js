@@ -45,7 +45,7 @@ describe("enzyme", () => {
     expect(checkbox.text()).toEqual("On");
   });
 
-  it.only("spyOn shallow", () => {
+  it("spyOn shallow", () => {
     // https://github.com/facebook/jest/issues/4696
     //https://github.com/airbnb/enzyme/issues/944
     // ********************************** jest.spyOn(Component.prototype, 'methodName') ***************************************************
