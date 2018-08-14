@@ -1,7 +1,15 @@
 import getMyOpportunities from "./myOpportunities.selector";
 
 let mockXXX = [{ id: 0, name: "initial" }];
+// can also mock a third-party dependency, e.g.
+// jest.mock('@wdpui/react-gel', () => ({
+//   ...require.requireActual('@wdpui/react-gel'),
+//   Button: 'Button',
+// }));
+// 
+
 jest.mock("./dependency", () => ({
+  ...require.requireActual("./dependency"),
   dependencyFunction: () => mockXXX
 }));
 
