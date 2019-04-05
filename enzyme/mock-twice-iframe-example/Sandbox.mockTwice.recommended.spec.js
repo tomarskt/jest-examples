@@ -2,6 +2,14 @@ import React from "react";
 import { mount } from "enzyme";
 import SandBox from "./Sandbox";
 
+
+jest.mock('../../helpers/dateTimeHelper', () => ({
+  getTodayMoment: () => {
+    const moment = require('moment');  // do your dynamic require here;
+    return moment('2019-04-03');
+  },
+}));
+
 // babel-plugin-jest-hoist: The module factory of `jest.mock()` is not allowed to reference any out-of-scope variables.
 let mockComponent = <div>initial value</div>;
 jest.mock("./displayloader", () => () => mockComponent); //// https://github.com/facebook/jest/issues/2567#issuecomment-272015844
