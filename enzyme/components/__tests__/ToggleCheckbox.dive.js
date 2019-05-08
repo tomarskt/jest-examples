@@ -13,6 +13,22 @@ describe("without dive", () => {
     expect(myButton.length).toBe(1);
     myButton.simulate("click");
 
+
+    // /opt/git/wdp-ui-coral/packages/dashboard-framework/src/components/QuickLinksMenu/QuickLinksMenu.test.jsx
+    // simulate onChange event with event mocked;
+    // const wrapper = shallow(withTheme(<QuickLinksMenu links={links} />)).dive();
+    // const evt = {
+    //   preventDefault: () => {},
+    //   target: {
+    //     value: '0',
+    //   },
+    // };
+    // // wdp-ui-react-gel/packages/select/src/index.jsx line 5
+    // // the Select component will wrapped with withAccessibleFocusStyle HOC by default;
+    // wrapper.find('SubscribedComponent').simulate('change', evt);
+
+
+
     const label2 = shallowed.find("label");
     expect(label2.text()).toBe("On");
 
